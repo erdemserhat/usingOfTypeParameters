@@ -1,3 +1,5 @@
+package generics
+
 fun main(args:Array<String>){
     val box = Box("X")
 
@@ -46,5 +48,7 @@ class GenericBox<T>(t:T){
     fun set(t:T){
         data=t
     }
+
+    
 
 }
