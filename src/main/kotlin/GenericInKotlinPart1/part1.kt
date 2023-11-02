@@ -28,7 +28,7 @@ fun main(args:Array<String>){
     var sum2=0
     for(num in numbers2){
         //sum2+=num--> this gives an error
-        sum2+=num as Int
+        //sum2+=num as Int
         //-->an explicit casting is done for every num :(
 
     }
@@ -45,8 +45,16 @@ fun main(args:Array<String>){
         //General purpose function compatible with any type :)
     }
 
+    var myObj1:Box<String> = Box<String>("Serhat")
+    var myObj2 = Box<Int>(1)
+
+
+
+
 
 }
+
+
 
 fun myListOf(vararg  element:Any):List<Any> {
     return element.asList()
@@ -57,4 +65,17 @@ fun myListOf(vararg  element:Any):List<Any> {
 
 fun <T>myUpdatedListOf(vararg  element:T):List<T>{
     return element.asList()
+}
+
+/**
+ * Make Your Generic Class
+ */
+
+class Box<T>(input:T){
+    private var input:T
+    init {
+        this.input=input
+        println(input)
+    }
+
 }
